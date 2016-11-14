@@ -1,9 +1,9 @@
 const assert = require('chai').assert;
 
-var foo = 'bar';
-var beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
+const foo = 'bar';
+const beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
 
-describe('chai tests', () => {
+describe('chai tests with assert', () => {
   it('typeof', () => {
     assert.typeOf(foo, 'string'); // without optional message
     assert.typeOf(foo, 'string', 'foo is a string'); // with optional message
@@ -41,7 +41,7 @@ describe('chai tests', () => {
   });
 
   it('true values', () => {
-    var passed = true;
+    const passed = true;
     assert.isTrue(passed, 'this passes');
     assert.isNotTrue('hey', `'hey' is not strictly true`)
   });
@@ -68,12 +68,12 @@ describe('chai tests', () => {
   });
 
   it('undefined values', () => {
-    var code;
+    const code;
     assert.isUndefined(code, 'code is not defined');
   });
 
   it('defined values', () => {
-    var code = 42;
+    const code = 42;
     assert.isDefined(code, 'code is defined');
   });
 
@@ -86,7 +86,7 @@ describe('chai tests', () => {
   });
 
   it('objects', () => {
-    var person = { name: 'Bob', age: 31 };
+    const person = { name: 'Bob', age: 31 };
     assert.isObject(person, 'person is an object');
     assert.isNotObject(42, '42 is not an object');
   });
@@ -116,13 +116,13 @@ describe('chai tests', () => {
   });
 
   it('arrays', () => {
-    var languages = ['JavaScript', 'Python', 'Ruby', 'C++', 'Java'];
+    const languages = ['JavaScript', 'Python', 'Ruby', 'C++', 'Java'];
     assert.isArray(languages, 'languages is an array');
     assert.isNotArray('assembly', 'assembly is not an array');
   });
 
   it('strings', () => {
-    var phrase = 'this is not a drill';
+    const phrase = 'this is not a drill';
     assert.isString(phrase, 'the phrase is a string');
     assert.isNotString({ name: 'Bob' }, 'the object is not a string');
   });
@@ -142,15 +142,15 @@ describe('chai tests', () => {
       this.name = name;
       this.age = age;
     }
-    var bob = new Person('bob', 31);
+    const bob = new Person('bob', 31);
     assert.instanceOf(bob, Person, 'bob is an instance of Person');
 
-    var dog = { name: 'Max'}
+    const dog = { name: 'Max'}
     assert.notInstanceOf(dog, Person, 'dog is not an instance of Person');
   });
 
   it('values in strings and arrays', () => {
-    var numbers = [1, 2, 3, 4];
+    const numbers = [1, 2, 3, 4];
     assert.include(numbers, 3, 'numbers includes 3');
     assert.notInclude(numbers, 13, 'numbers does not include 13');
 
